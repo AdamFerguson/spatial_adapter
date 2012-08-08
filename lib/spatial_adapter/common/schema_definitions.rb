@@ -5,7 +5,7 @@ ActiveRecord::ConnectionAdapters::IndexDefinition.class_eval do
 
   alias_method :initialize_without_spatial, :initialize
   def initialize(table, name, unique, columns, lengths=nil, orders=nil, spatial = false)
-    initialize_without_spatial(table, name, unique, columns)
+    initialize_without_spatial(table, name, unique, columns, lengths, orders)
     @spatial = spatial
   end
 end
