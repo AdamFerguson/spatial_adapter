@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   if s.platform.to_s == 'ruby'
     s.add_development_dependency 'pg'
     s.add_development_dependency 'mysql'
-    s.add_development_dependency 'mysql2', '<= 0.2.13'
+    s.add_development_dependency 'mysql2', '<= 0.3.11'
   end
 
   if s.platform.to_s == 'java'

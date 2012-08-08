@@ -189,7 +189,7 @@ module ActiveRecord::ConnectionAdapters
         spatial = indtype == 'gist' && columns.size == 1 && (columns.values.first[1] == 'geometry' || columns.values.first[1] == 'geography')
 
         column_names = indkey.map {|attnum| columns[attnum] ? columns[attnum][0] : nil }
-        ActiveRecord::ConnectionAdapters::IndexDefinition.new(table_name, index_name, unique, column_names, spatial)
+        ActiveRecord::ConnectionAdapters::IndexDefinition.new(table_name, index_name, unique, column_names, [], nil, spatial)
       end
 
       indexes

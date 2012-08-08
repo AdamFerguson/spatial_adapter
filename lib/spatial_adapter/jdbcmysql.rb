@@ -30,7 +30,7 @@ module ActiveRecord::ConnectionAdapters
           next if row['Key_name'] == "PRIMARY" # skip the primary key
           current_index = row['Key_name']
           indexes << ActiveRecord::ConnectionAdapters::IndexDefinition \
-            .new(row['Table'], row['Key_name'], row['Non_unique'] == "0", [], row['Index_type'] == "SPATIAL")
+            .new(row['Table'], row['Key_name'], row['Non_unique'] == "0", [], [], nil, row['Index_type'] == "SPATIAL")
         end
         indexes.last.columns << row['Column_name']
       end
